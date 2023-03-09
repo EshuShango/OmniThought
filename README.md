@@ -1,1 +1,1 @@
-# Social Network API
+# OmniThought 💭
