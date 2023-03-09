@@ -15,6 +15,10 @@ const userSchema = Schema({
     /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})|([^\s@]+@[^\s@]+\.[^\s@]+)$/
   }, 
   thoughts: {
-    type: 
+    type: [
+      {
+        
+      }
+    ]
   }
 });
