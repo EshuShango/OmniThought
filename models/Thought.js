@@ -1,24 +1,15 @@
-const { Schema, model, Types } = require("mongoose");
-//* or 
-// const mongoose = require("mongoose");
-// const Schema = mongoose.Schema;
-
-const dayjs = require('dayjs');
-const reactionSchema = require("./Reaction");
-const { virtuals } = require("../../../lessons/18-NoSQL/01-Activities/28-Stu_Mini-Project/Main/models/Assignment");
-
 const thoughtSchema = new Schema(
   {
     _id: {
       type: Schema.Types.ObjectId,
-      default: () => new Types.ObjectId
+      default: () => new Types.ObjectId()
 
     },
     thoughtText: {
       type: String,
       required: true,
       minLength: 1,
-      macLength:280
+      maxLength:280
     }, 
     createdAt: {
       type: Date,
@@ -29,23 +20,22 @@ const thoughtSchema = new Schema(
       type:String,
       required: true
     },
-    {
-      reactions: [reactionSchema]
-    }
-    {
-      toJSON: {
-        virtuals: true,
-        getters: true,
-            }
-    }, 
-    id: false,
+    
+    reactions: [reactionSchema]
+  }, // add a comma here
+  {
+    toJSON: {
+      virtuals: true,
+      getters: true
+    },
+    id: false
   }
 );
 
 thoughtSchema.virtual("reactionCount").get( () => {
-  return this.reactions.lenght;
+  return this.reactions.length;
 });
 
-const Thought = mode("Thought", thoughtSchema);
+const Thought = model("Thought", thoughtSchema);
 
-export default = model("Thought", thoughtSD);
+module.exports = Thought;
