@@ -1,4 +1,7 @@
 const { Schema, model } = require("mongoose");
+//* or 
+// const mongoose = require("mongoose");
+// const Schema = mongoose.Schema;
 const userSchema = new Schema(
   {
     usrNme: {
