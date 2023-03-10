@@ -11,14 +11,14 @@ const userSchema = Schema({
     type: String,
     required: true,
     unique: true,
-    match:
-    /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})|([^\s@]+@[^\s@]+\.[^\s@]+)$/
-  }, 
+    match: /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})|([^\s@]+@[^\s@]+\.[^\s@]+)$/,
+  },
   thoughts: {
     type: [
       {
-        
-      }
-    ]
-  }
+        type: Schema.type.ObjectId,
+        ref: "User",
+      },
+    ],
+  },
 });
