@@ -24,6 +24,11 @@ module.exports = {
       );
     } catch (error) {}
   },
+if (!updUsr) {
+  res.status(500).json(message: "No user found");
+}
+r
+res.roo 
 
   async getThoughts(req, res) {
     try {
