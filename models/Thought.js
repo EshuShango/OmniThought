@@ -2,36 +2,34 @@ const { Schema, model } = require("mongoose");
 
 const thoughtSchema = new Schema(
   {
-    
-    
     thoughtText: {
       type: String,
       required: true,
       minLength: 1,
-      maxLength:280
-    }, 
+      maxLength: 280,
+    },
     createdAt: {
       type: Date,
       default: Date.now,
-      get: value => dayjs(value).format("MMMM, DDDD, YYYY, [at] hh:mm a")
+      get: (value) => dayjs(value).format("MMMM, DDDD, YYYY, [at] hh:mm a"),
     },
     usrName: {
-      type:String,
-      required: true
+      type: String,
+      required: true,
     },
-    
-    reactions: [reactionSchema]
-  }, 
+
+    reactions: [reactionSchema],
+  },
   {
     toJSON: {
       virtuals: true,
-      getters: true
+      getters: true,
     },
-    id: false
+    id: false,
   }
 );
 
-thoughtSchema.virtual("reactionCount").get( () => {
+thoughtSchema.virtual("reactionCount").get(() => {
   return this.reactions.length;
 });
 
