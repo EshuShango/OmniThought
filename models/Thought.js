@@ -1,3 +1,5 @@
+const { Schema, model } = require("mongoose");
+
 const thoughtSchema = new Schema(
   {
     _id: {
@@ -22,7 +24,7 @@ const thoughtSchema = new Schema(
     },
     
     reactions: [reactionSchema]
-  }, // add a comma here
+  }, 
   {
     toJSON: {
       virtuals: true,
