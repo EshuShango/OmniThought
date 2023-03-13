@@ -3,8 +3,8 @@ const tR = express.Router();
 //! may have to change back to router
 const {
   getThoughts,
-  getSingleThought,
   createThought,
+  getSingleThought,
   updateThought,
   deleteThought,
   addReaction,
