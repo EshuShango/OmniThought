@@ -18,3 +18,5 @@ tR.route("/:id").get(getSingleThought).put(updateThought).delete(deleteThought);
 tR.route("/:id/reactions").post(addReaction);
 
 tR.route("/:id/reactions/:reactionId").delete(removeReaction);
+
+module.exports = tR;
