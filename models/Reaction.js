@@ -1,6 +1,6 @@
 const dayjs = require("dayjs");
 const { Schema, Types } = require("mongoose");
-// const reactionSchema = require("./Reaction");
+const reactionSchema = require("./Reaction");
 
 const reactionSchema = new Schema(
   {
@@ -31,6 +31,5 @@ const reactionSchema = new Schema(
   }
 );
 
-// const User = model("User", userSchema);
 
 module.exports = reactionSchema;
